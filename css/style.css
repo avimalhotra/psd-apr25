@@ -5,7 +5,7 @@ ul{ list-style: none; padding: 0;}
 iframe{ border: none;}
 :disabled{ cursor: not-allowed;}
 button{ padding: 0; cursor: pointer;}
-label{ display: inline-block;}
+label{ display: block;}
 
 @font-face {
     font-family: proxima;
@@ -27,14 +27,14 @@ label{ display: inline-block;}
 }
 
 
-html{ font-size: 15px; --red:#ca3c3c; --ff: proxima, sans-serif}
+html{ font-size: 15px; --red:#ca3c3c; --ff: proxima, sans-serif; scroll-behavior:smooth; scroll-padding-top: 80px;}
 
 body{ font: 16px var(--ff) }
 blockquote{ font-weight: 100;}
 
 .container{ max-width: 1200px; margin: auto; padding: 0 1rem; }
 
-.row{ display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 2rem; }
+.row{ display: grid; grid-template-columns: repeat(12, 1fr); gap: 2rem; }
 
 .col-1{ grid-column: span 1; }
 .col-2{ grid-column: span 2;  }
@@ -46,7 +46,6 @@ blockquote{ font-weight: 100;}
 .col-8{ grid-column: span 8; }
 .col-9{ grid-column: span 9; }
 .col-10{ grid-column: span 10; }
-.col-11{ grid-column: span 11; }
 .col-12{ grid-column: span 12; }
 .flex{ display: flex;}
 .justify-space-bet{ justify-content: space-between;}
@@ -55,26 +54,35 @@ blockquote{ font-weight: 100;}
 /* layout */
 
 
-header{ background: #000; color: #fff;}
+header{ background: #000; color: #fff; position: sticky; top: 0;}
 h1{ font-size: 30px; }
 h1 a{ color: inherit; line-height: 80px; display: inline-block; }
 nav{ margin-left: -20px;}
 nav li{ margin: 0 5px; }
 nav a{ color: inherit; display: block; line-height: 80px; padding: 0 15px; }
 .btn{ width: 90px; height: 35px; border: 2px solid; background: none; color: var(--red); border-radius: 10px; font: 16px var(--ff); }
+.menu{ float: right; display: none; }
+.menu span{ display: block; height: 2px; background: var(--red); margin: 5px 10px; }
 
 
 
+.banner{ background: #666; color: #fff; padding: 15rem 0;}
+.banner button{ background: none; border: none; font-size: 10rem; color: inherit; margin-right: 40px;}
+.banner p{ font: 100 4rem var(--ff);}
+.banner a{ color: var(--red);}
 
 
 
+.wrap-3{ background: var(--red); color: #fff; padding: 50px 0;}
+h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid;}
+.gap-y-4{ row-gap: 4rem; }
+.circle{ width: 100px; aspect-ratio: 1/1; border: 2px solid; margin-right: 2rem; border-radius: 50%; display: grid; place-items: center; font-size: 36px;}
+.wrap-3 h3{ font-size: 16px; line-height: 30px; }
+.wrap-3 p{ font:100 14px/22px var(--ff); }
 
 
 
-
-
-
-
+.wrap-4{ line-height: 10rem; text-align: center; font-size: 36px; color: var(--red); background: #fff;}
 
 
 
@@ -83,10 +91,10 @@ nav a{ color: inherit; display: block; line-height: 80px; padding: 0 15px; }
 
 @media screen and (max-width: 1220px){
     html{ font-size: 13px;}
+    h2{font-size: 62px;}
 }
 
 @media screen and (max-width: 980px){
-    .col-t-1{ grid-column: span 1; }
     .col-t-2{ grid-column: span 2;  }
     .col-t-3{ grid-column: span 3; }
     .col-t-4{ grid-column: span 4; }
@@ -96,37 +104,26 @@ nav a{ color: inherit; display: block; line-height: 80px; padding: 0 15px; }
     .col-t-8{ grid-column: span 8; }
     .col-t-9{ grid-column: span 9; }
     .col-t-10{ grid-column: span 10; }
-    .col-t-11{ grid-column: span 11; }
     .col-t-12{ grid-column: span 12; }
+    .banner p{ font-size: 3rem;}
+    
 }
 
 @media screen and (max-width: 767px){
     html{ font-size: 12px;}
-    .col-m-1{ grid-column: span 1; }
-    .col-m-2{ grid-column: span 2;  }
     .col-m-3{ grid-column: span 3; }
     .col-m-4{ grid-column: span 4; }
-    .col-m-5{ grid-column: span 5; }
     .col-m-6{ grid-column: span 6; }
-    .col-m-7{ grid-column: span 7; }
     .col-m-8{ grid-column: span 8; }
     .col-m-9{ grid-column: span 9; }
-    .col-m-10{ grid-column: span 10; }
-    .col-m-11{ grid-column: span 11; }
     .col-m-12{ grid-column: span 12; }
+    .collapse{ display: none;}
+    .menu{ display: inline-block;}
 }
 
 @media screen and (max-width: 460px){
-    .col-p-1{ grid-column: span 1; }
-    .col-p-2{ grid-column: span 2;  }
-    .col-p-3{ grid-column: span 3; }
     .col-p-4{ grid-column: span 4; }
-    .col-p-5{ grid-column: span 5; }
     .col-p-6{ grid-column: span 6; }
-    .col-p-7{ grid-column: span 7; }
-    .col-p-8{ grid-column: span 8; }
-    .col-p-9{ grid-column: span 9; }
-    .col-p-10{ grid-column: span 10; }
-    .col-p-11{ grid-column: span 11; }
     .col-p-12{ grid-column: span 12; }
+    .banner .flex{ flex-flow: column; }
 }
