@@ -132,8 +132,8 @@ h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid; margin-bottom
 
 
 .wrap-9{ padding: 100px 0 125px; background: #fff; color: #363636;}
-.chart{ aspect-ratio: 1/1; border-radius: 50%; padding: 10px; margin-top: 50px;}
-.chart p{ background: #fff; border-radius: 50%; height: 100%; display: grid; place-items: center;}
+.chart{ aspect-ratio: 1/1; border-radius: 50%; margin-top: 50px; display: grid; place-items: center;}
+.chart p{ background: #fff; border-radius: 50%; height: calc(100% - 20px); width: calc(100% - 20px); display: grid; place-items: center;}
 .c1{ background: conic-gradient( var(--red) 90deg, transparent 90deg ) }
 .c2{ background: conic-gradient( var(--red) 180deg, transparent 180deg ) }
 .c3{ background: conic-gradient( var(--red) 270deg, transparent 270deg ) }
