@@ -160,6 +160,27 @@ h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid; margin-bottom
 .wrap-11{ background: #7f7f7f; padding: 28px 0 0 0; }
 .box{ background: #a6a6a6; color: #fff; line-height: 95px; text-align: center; font-size: 24px;}
 
+
+
+.wrap-12{ padding: 100px 0 140px; background: #ebebeb; color: #363636;}
+.wrap-12 address{ color: #898989; line-height: 30px;}
+.social-sm{ margin: 20px 0;}
+.social-sm li{ margin-right: 20px;}
+.social-sm a{ font-size: 16.22px; color: var(--red);}
+.wrap-12 label{ border: 2px solid; padding: 17px; }
+.wrap-12 :is(input, textarea){ border: none; background: none; resize: none; vertical-align: top; }
+.wrap-12 button{ border: none; background: #fff; border-radius: 10px; height: 80px; width: 100%; color: var(--red);}
+.wrap-12 button span{ font-size: 36px; vertical-align: middle; }
+.wrap-12 textarea{ height: 42px; }
+.wrap-12 :is(input, textarea):focus{ outline: none; }
+.wrap-12 label:focus-within{ border-color: var(--red);}
+
+
+.wrap-13{ background: #252525; color: #fff; text-align: center; padding: 50px 0;}
+.wrap-13 h3{ font-size: 30px; }
+.wrap-13 p{ font: 100 14px/22px var(--ff); color: #ccc;}
+.wrap-13 button{ background: none; border: none; color: var(--red); font-size: 36px;}
+
 /* responsive */
 
 @media screen and (max-width: 1220px){
