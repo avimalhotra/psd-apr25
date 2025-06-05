@@ -7,13 +7,15 @@
     <link rel="icon" href="img/icon.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body id="home">
     <header>
         <div class="container">
             <div class="row align-center">
                 <div class="col-2 col-m-6">
-                    <h1><a href="#home">IDDO</a></h1>
+                    <h1><a href="#home">IDDO </a></h1>
                 </div>
                 <div class="col-10 col-m-6">
                     <button class="btn menu"><span></span><span></span><span></span></button>
@@ -52,7 +54,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-4 col-t-6 col-p-12">
-                    <h2>OUR SERVICES.</h2>
+                    <h2 data-aos="fade-up">OUR SERVICES.</h2>
                 </div>
                 <div class="col-8 col-t-12">
                     <div class="row gap-y-4">
@@ -101,7 +103,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-4 col-t-6 col-p-12">
-                    <h2>OUR WORKS.</h2>
+                    <h2 data-aos="flip-left">OUR WORKS.</h2>
                     <button class="btn active">All</button><button class="btn">Website</button><button class="btn">Branding</button>
                 </div>
             </div>   
@@ -197,7 +199,7 @@
                 <div class="col-2" role="presentation"></div>
                 <div class="col-8 col-t-12">
                    <div class="reviews">
-                        <div class="review active">
+                        <div class="review">
                             <blockquote>
                                 <p><q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque rerum nostrum maxime esse eligendi saepe </q></p>
                                 <figure>
@@ -206,15 +208,31 @@
                                 </figure>
                             </blockquote>
                         </div>
-                        <div class="review">2</div>
-                        <div class="review">3</div>
-                        <div class="pager">
+                        <div class="review">
+                            <blockquote>
+                                <p><q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque rerum nostrum maxime esse eligendi saepe </q></p>
+                                <figure>
+                                    <img src="img/jack.webp" alt="jack" width="70" height="70" loading="lazy">
+                                    <figcaption>JACK EFRON</figcaption>
+                                </figure>
+                            </blockquote>
+                        </div>
+                        <div class="review">
+                            <blockquote>
+                                <p><q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque rerum nostrum maxime esse eligendi saepe </q></p>
+                                <figure>
+                                    <img src="img/jack.webp" alt="jack" width="70" height="70" loading="lazy">
+                                    <figcaption>JACK EFRON</figcaption>
+                                </figure>
+                            </blockquote>
+                        </div>
+                        <!-- <div class="pager">
                             <ol class="flex justify-center">
                                 <li><a href="" class="active"></a></li>
                                 <li><a href=""></a></li>
                                 <li><a href=""></a></li>
                             </ol>
-                        </div>
+                        </div> -->
                    </div>
                 </div>
             </div>
@@ -468,10 +486,25 @@
             <button><span class="fa fa-chevron-up"></span></button>
         </div>
     </footer> 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>         
+
+    <div class="hiddenform" hidden>
+        <button class="fa fa-times close"></button>
+        <form>
+            <div><label>Name: <input type="text" required></label></div>
+            <div><label>Email: <input type="text" required></label></div>
+            <div><label>Phone: <input type="text" required></label></div>
+            <div><button class="btn">Sign Up</button></div>
+        </form>
+    </div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>    
+<script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>     
 <script>
-    "use strict";
+"use strict";
 $(function(){
+    AOS.init();
 
     $(".menu").click(function(){
         $(".collapse").slideToggle();
@@ -531,9 +564,67 @@ $(function(){
 
     $(".wrap-13 button").click(function(){
         $(window).scrollTop(0)
-    })
+    });
+
+    $(".signup").click(function(){
+        $("body").append(`<div class="overlay"></div>`);
+        $("body").css({overflow:"hidden"});
+        $("body").append(`<div class="popup"></div>`);
+        $(".popup").append($('.hiddenform').html());
+        $(".popup input:first").trigger("focus");
+        $(".close").click(function(){
+            $(".overlay,.popup").remove();
+            $("body").css({overflow:"auto"});
+        });
+        $(window).keyup(function(e){
+            if(e.which==27){
+                 $(".overlay,.popup").remove();
+                $("body").css({overflow:"auto"});
+            }           
+        })
+    });
+
+    $(".banner button, .banner a").click(function(e){
+        e.preventDefault();
+        $("body").append(`<div class="overlay"></div>`);
+        $("body").css({overflow:"hidden"});
+        $("body").append(`<div class="popup"></div>`);
+        $(".popup").append(`<div class="iframe"><iframe src="https://www.youtube.com/embed/n0iBCQklw1A?si=gJgznh81DRauGb2A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`);
+
+
+        $(".overlay").click(function(){
+            $(".overlay,.popup").remove();
+                $("body").css({overflow:"auto"});
+        });
+
+         $(window).keyup(function(e){
+            if(e.which==27){
+                 $(".overlay,.popup").remove();
+                $("body").css({overflow:"auto"});
+            }           
+        })
+
+    });
+
+
+    $(".reviews").bxSlider({
+        controls:false,
+        auto:true,
+        pause:5000,
+        autoHover:true
+    });
+
+
+
+
+
+    
 
 });
 </script>
 </body>
 </html>
+
+<!-- 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/n0iBCQklw1A?si=gJgznh81DRauGb2A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+-->

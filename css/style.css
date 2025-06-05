@@ -106,15 +106,16 @@ h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid; margin-bottom
 
 
 .wrap-6{ padding: 4rem 0 2rem; background: #666; color: #fff; }
-.review{display: none; text-align: center;}
-.review.active{display: block}
+.review{ text-align: center;}
 .review blockquote p{ font: 100 36px/41px var(--ff);}
 .review figcaption{ font-size: 18px; font-weight: 700; }
-.reviews img{ margin: 10px 0;}
-.reviews ol{margin-top: 2rem; list-style: none; padding: 0; }
+/* .reviews ol{margin-top: 2rem; list-style: none; padding: 0; }
 .reviews li{ margin: 0 5px;}
-.reviews a{ display: block; width: 10px; height: 10px; border-radius: 50%; background: #fff; }
-
+.reviews a{ display: block; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #fff; } */
+.wrap-6 .bx-wrapper{ background: none; border: none; box-shadow: 0 0; }
+.wrap-6 .bx-wrapper img{margin: 10px 0; display:inline-block}
+.wrap-6 .bx-wrapper .bx-pager.bx-default-pager a{ border: 2px solid #fff; }
+.wrap-6 .bx-wrapper .bx-pager.bx-default-pager a.active,.wrap-6  .bx-wrapper .bx-pager.bx-default-pager a:focus,.wrap-6  .bx-wrapper .bx-pager.bx-default-pager a:hover{background: #fff}
 
 
 .wrap-7{ padding: 100px 0 140px; background: #fff; color: #363636;}
@@ -184,6 +185,16 @@ h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid; margin-bottom
 .wrap-13 h3{ font-size: 30px; }
 .wrap-13 p{ font: 100 14px/22px var(--ff); color: #ccc;}
 .wrap-13 button{ background: none; border: none; color: var(--red); font-size: 36px;}
+
+
+.overlay{ background: #000b; position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index:2 }
+.popup{ background: #fff; padding: 1rem; position: fixed; left: 50%;  top: 50%; transform: translate(-50%,-50%); z-index: 3; border-radius: 5px; min-width: 700px}
+.popup form div{ margin: 1rem 0;}
+.popup form input{ float: right; margin-left: 1rem;}
+.close{ border: none; color: var(--red); background: none; position: absolute; right: 5px; top: 5px; }
+.iframe{ position: relative; padding-top: 56.3%;}
+.iframe iframe{ position: absolute; left: 0; top: 0; right: 0; width: 100%; height: 100%; }
+
 
 /* responsive */
 
